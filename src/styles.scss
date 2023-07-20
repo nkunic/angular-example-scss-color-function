@@ -1,0 +1,21 @@
+:root {
+  --color-success: green;
+  --color-info: blue;
+  --color-warning: orange;
+  --color-danger: red;
+}
+
+// Color map
+$color-map: (
+  success: --color-success,
+  info: --color-info,
+  warning: --color-warning,
+  danger: --color-danger,
+);
+
+// Generate styles
+@each $color, $value in $color-map {
+  .color-#{$color} {
+    color: var(#{$value});
+  }
+}
